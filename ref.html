@@ -29,7 +29,9 @@
         </a>
         </div>
 </center>
-<button id="sendButton">Send Ref</button>
+      <a href="tg://msg?to=your_telegram_phone_number&text=Hey! Here's your referral link: your_referral_link" target="_blank">
+        <button id="sendRefLink">Send Ref Link</button>
+      </a> 
 
 <style>
 body {
@@ -102,29 +104,32 @@ body {
 </style>
 
 <script>
-const sendButton = document.getElementById('sendButton');
+      // Mini-app JavaScript
+      const sendButton = document.getElementById('sendButton');
 
-sendButton.addEventListener('click', () => {
-  const messageText = 'This is a message from my mini-app!';
+      sendButton.addEventListener('click', () => {
+        const userId = getUserID(); // Get the user's ID somehow
+        const refLink = 'your_referral_link';
 
-  fetch('https://api.telegram.org/7644475602:AAG0EQt2Zs86TySNWrJxRhT0isRFcm5JxZg/sendMessage', { //Your Bot token and chat ID
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      chat_id: -1001957583407, //Your Chat ID here
-      text: messageText
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Message sent:', data); 
-  })
-  .catch(error => {
-    console.error('Error sending message:', error);
-  });
-});
+        // Send message to your bot
+        fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            chat_id: YOUR_BOT_CHAT_ID, 
+            text: `/sendref ${userId} ${refLink}`
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Handle the bot's response (e.g., display a confirmation)
+        })
+        .catch(error => {
+          // Handle errors
+        });
+      });
 </script>
 </body>
 </html>
