@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test</title>
+  <title>Сайт с лайками</title>
   <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,13 +28,12 @@
         </a>
         </div>
 </center>
+<button id="sendButton">Send Ref</button>
 
 <style>
 body {
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 1%, rgba(14,121,9,1) 53%, rgba(24,255,0,1) 100%);
-    touch-action: none;
-    overflow: none;
+    background: linear-gradient(to bottom right, #646464 28%, #000000 88%);
+    height: 100vh;
 }
 .bar {
     bottom: 0;
@@ -100,5 +99,32 @@ body {
     margin-left: -1vw;
 }
 </style>
+
+<script>
+const sendButton = document.getElementById('sendButton');
+
+sendButton.addEventListener('click', () => {
+  const messageText = 'This is a message from my mini-app!';
+
+  fetch('https://api.telegram.org/7644475602:AAG0EQt2Zs86TySNWrJxRhT0isRFcm5JxZg/sendMessage', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: YOUR_CHAT_ID, // Telegram chat ID for the bot
+      text: messageText
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Message sent:', data); 
+  })
+  .catch(error => {
+    console.error('Error sending message:', error);
+  });
+});
+
+</script>
 </body>
 </html>
