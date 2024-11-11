@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Сайт с лайками</title>
+  <title>Test</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <h1 style="font-family: Geologica; color: white;">Your RefLink:</h1>
@@ -18,7 +17,7 @@
               <button class="home">Home</button>
         </a>
             <img src="https://i.postimg.cc/1thwJR8V/4174-DB42-7681-4639-859-B-C18-E3-A89-E551.png" width="40vw" style="position: absolute; margin-top: -3vw; margin-left: 7.5vw;">
-              <button class="ref"><b>Ref</b></button>
+              <button  class="ref"><b>Ref</b></button>
         <a href="">
             <img src="https://i.postimg.cc/vBr9jRnq/1-EF3-A820-8-A58-47-C4-8-CE8-A04-F9-AE38-AB1.png" width="30vw" style="position: absolute; margin-top: 1vw; margin-left: 8vw;">
               <button class="task">Task</button>
@@ -29,9 +28,14 @@
         </a>
         </div>
 </center>
-      <a href="tg://msg?to=your_telegram_phone_number&text=Hey! Here's your referral link: your_referral_link" target="_blank">
-        <button id="sendRefLink">Send Ref Link</button>
-      </a> 
+
+<center>
+<div class="send">
+<input type="text" value="You Ref" id="myInput" disabled>
+<button class="copy" onclick="myFunction()">Copy text</button><br>
+<a href="#" class="refsend">Send RefLink</a>
+</div>
+</center>
 
 <style>
 body {
@@ -101,35 +105,65 @@ body {
     color: white;
     margin-left: -1vw;
 }
+.send {
+    background-color: #797979;
+    width: 90vw;
+    height: 40vw;
+    border-radius: 25px;
+}
+input {
+    background-color: #999999;
+    border: none;
+    border-radius: 15px;
+    width: 50%;
+    height: 10vw;
+    margin-top: 5vw;
+}
+.refsend {
+    display: inline-block;
+    padding: 0.9em 3em;
+    text-decoration: none;
+    background: #4cad61; 
+    color: #f9f9f9; 
+    border-bottom: solid 10px #466148; 
+    border-radius: 5px;
+    font-family: Geologica;
+    width: 50%;
+    height: 4vw;
+    border-radius: 25px;
+    margin-top: 5vw;
+}
+.refsend:active {
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+}
+.copy {
+    text-decoration: none;
+    display: inline-block;
+    height: 10vw;
+    background-color: #4cad61;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-family: Geologica;
+}
 </style>
 
 <script>
-      // Mini-app JavaScript
-      const sendButton = document.getElementById('sendButton');
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
 
-      sendButton.addEventListener('click', () => {
-        const userId = getUserID(); // Get the user's ID somehow
-        const refLink = 'your_referral_link';
+  /* Select the text field */
+  copyText.select();
 
-        // Send message to your bot
-        fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            chat_id: YOUR_BOT_CHAT_ID, 
-            text: `/sendref ${userId} ${refLink}`
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          // Handle the bot's response (e.g., display a confirmation)
-        })
-        .catch(error => {
-          // Handle errors
-        });
-      });
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied");
+}
 </script>
 </body>
 </html>
