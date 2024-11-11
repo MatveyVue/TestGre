@@ -3,10 +3,10 @@
 <head>
   <title>Сайт с лайками</title>
   <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <h1 style="font-family: Geologica; color: white;">Your RefLink:</h1>
@@ -17,7 +17,7 @@
               <button class="home">Home</button>
         </a>
             <img src="https://i.postimg.cc/1thwJR8V/4174-DB42-7681-4639-859-B-C18-E3-A89-E551.png" width="40vw" style="position: absolute; margin-top: -3vw; margin-left: 7.5vw;">
-              <button  class="ref"><b>Ref</b></button>
+              <button class="ref"><b>Ref</b></button>
         <a href="">
             <img src="https://i.postimg.cc/vBr9jRnq/1-EF3-A820-8-A58-47-C4-8-CE8-A04-F9-AE38-AB1.png" width="30vw" style="position: absolute; margin-top: 1vw; margin-left: 8vw;">
               <button class="task">Task</button>
@@ -106,13 +106,13 @@ const sendButton = document.getElementById('sendButton');
 sendButton.addEventListener('click', () => {
   const messageText = 'This is a message from my mini-app!';
 
-  fetch('https://api.telegram.org/7644475602:AAG0EQt2Zs86TySNWrJxRhT0isRFcm5JxZg/sendMessage', {
+  fetch('https://api.telegram.org/7644475602:AAG0EQt2Zs86TySNWrJxRhT0isRFcm5JxZg/sendMessage', { //Your Bot token and chat ID
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      chat_id: YOUR_CHAT_ID, // Telegram chat ID for the bot
+      chat_id: -1001957583407, //Your Chat ID here
       text: messageText
     })
   })
@@ -124,7 +124,6 @@ sendButton.addEventListener('click', () => {
     console.error('Error sending message:', error);
   });
 });
-
 </script>
 </body>
 </html>
