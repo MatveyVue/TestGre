@@ -23,10 +23,24 @@
         <img src="https://i.postimg.cc/1thwJR8V/4174-DB42-7681-4639-859-B-C18-E3-A89-E551.png" width="30vw" style="position: absolute; margin-top: 1vw; margin-left: 8vw;">
           <button  class="ref">Ref</button>
     </a>
-    <a href="">
         <img src="https://i.postimg.cc/vBr9jRnq/1-EF3-A820-8-A58-47-C4-8-CE8-A04-F9-AE38-AB1.png" width="30vw" style="position: absolute; margin-top: 1vw; margin-left: 8vw;">
-          <button class="task">Task</button>
-    </a>
+          <button type="button" onclick="window.task.showModal()" class="task">Task</button>
+        <dialog class="taskmod" id="task">
+          <button class="close" type="button" onclick="window.task.close()">X</button>
+          <h2 style="font-family: Geologica;">Leaderbord<br>of Ambassadors</h2>
+          <div class="lider" id="leaderboard">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+              </tbody>
+            </table>
+          </div>
+        </dialog>
     <a href="">
         <img src="https://i.postimg.cc/2yCvNHFz/97-BCD207-C64-B-44-A2-AABB-DDBD77957020.png" width="30vw" style="position: absolute; margin-top: 1vw; margin-left: 8.5vw;">
           <button class="donat">Donat</button>
@@ -117,7 +131,7 @@ body {
     background: #4cad61; 
     color: #f9f9f9; 
     border-bottom: solid 10px #466148; 
-    border-radius: 25px;
+    border-radius: 5px;
     font-family: Geologica;
 }
 .присоед:active {
@@ -125,6 +139,48 @@ body {
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
 }
+.taskmod {
+    width: 100%;
+    border: 3px solid white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 185vw;
+    margin-bottom: 0;
+    overflow: none;
+}
+dialog {
+    bottom: 0;
+    overflow: none;
+    touch-action: none;
+}
+.close {
+    background-color: #c2c2c2;
+    margin-right: -80vw;
+    border-radius: 50%;
+    border: none;
+    width: 8vw;
+    height: 8vw;
+    font-family: Geologica;
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    margin-top: -2vw;
+}
+#leaderboard {
+      width: 100%;
+      height: 100%;
+      margin-top: 10vw;
+      text-align: center;
+      font-family: Geologica;
+    }
+    #leaderboard table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #leaderboard th, #leaderboard td {
+      padding: 10px;
+      border: 1px solid #ffffff;
+      text-align: left;
+    }
 </style>
 </body>
 </html>
