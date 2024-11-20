@@ -1,0 +1,9 @@
+body {
+  background-image: url("https://media3.giphy.com/media/OKIAh2hfMmNmsRk6pE/giphy.gif?cid=9b38fe91hpyn2z0nzwt4dmspqe65lrwwrcn3ujazj6kb06gk&ep=v1_gifs_username&rid=giphy.gif&ct=g");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  margin: 0; 
+  overflow: hidden; 
+  height: 100vh; 
+}
