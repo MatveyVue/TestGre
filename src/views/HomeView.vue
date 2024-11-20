@@ -1,7 +1,7 @@
 <template>
   <div style="text-align: center; margin-top: 30vw;">
     <h1 style="font-family: Roboto; color: white;"><b>{{score}}</b></h1>
-    <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="450px" style="margin-left: -10vw"></a> 
+    <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="450px" style="margin-left: -7vw"></a> 
   </div>
   <div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto; margin-top: auto; position: absolute;">
     <p>3000/3000</p>
