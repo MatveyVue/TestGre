@@ -1,18 +1,18 @@
 <template>
   <div style="text-align: center; margin-top: 30vw;">
-    <h1 style="font-family: Roboto; color: white;"><b>{{score}}</b></h1>
-<div class="image-container">
-    <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="450px"></a> 
+    <h1 style="font-family: Roboto; color: white;"><b>{{score}}</b></h1>  
+<div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+    <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="500px"></a> 
 </div>
+<div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto; margin-top: -20vw;">
+  <p>3000/3000</p>
+  <img src="https://em-content.zobj.net/source/telegram/386/high-voltage_26a1.webp" style="width: 5vw; margin-left: 2px;">
+</div>  
 </div>
-  <div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto;">
-    <p>3000/3000</p>
-    <img src="https://em-content.zobj.net/source/telegram/386/high-voltage_26a1.webp" style="width: 5vw; margin-left: 2px;">
-  </div>  
   <div class="box">
     <button class="up">Upgrade</button>
     <button class="game"><b>Games</b></button>
-    <button class="ref">Ref</button>
+    <RouterLink to="/about"><button class="ref">Ref</button></RouterLink>
   </div>
 </template>
   
