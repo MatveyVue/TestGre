@@ -47,21 +47,6 @@
     width: 34%;
     height: 80px;
   }
-  .image-container {
-  position: relative;
-  text-align: center; /* Important for centering */
-  width: 100%; /* Crucial for taking up full width */
-  height: auto;
-  overflow: hidden; /* Hide any overflow; important! */
-}
-
-.centered-image {
-  display: block; /* Important for correct width calculation */
-  max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  margin: 0 auto; /* Center horizontally */
-}
-
 </style>
   
 <script>
