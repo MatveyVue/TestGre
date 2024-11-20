@@ -3,7 +3,7 @@
     <h1 style="font-family: Roboto; color: white;"><b>{{score}}</b></h1>
     <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="450px" style="margin-left: -5vw"></a> 
   </div>
-  <div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto; margin-top: auto; position: absolute;">
+  <div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto;">
     <p>3000/3000</p>
     <img src="https://em-content.zobj.net/source/telegram/386/high-voltage_26a1.webp" style="width: 5vw; margin-left: 2px;">
   </div>  
