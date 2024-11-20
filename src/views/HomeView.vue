@@ -1,10 +1,10 @@
 <template>
   <div style="text-align: center; margin-top: 30vw;">
     <h1 style="font-family: Roboto; color: white;"><b>{{score}}</b></h1>
-<center>
+<div class="image-container">
     <a class="click" @click="click()"><img src="https://i.postimg.cc/Bbx7rKd1/IMG-2281.png" width="450px"></a> 
-</center>
-  </div>
+</div>
+</div>
   <div style="text-align: center; display: flex; align-items: center; justify-content: center; color: white; font-family: Roboto;">
     <p>3000/3000</p>
     <img src="https://em-content.zobj.net/source/telegram/386/high-voltage_26a1.webp" style="width: 5vw; margin-left: 2px;">
@@ -47,6 +47,21 @@
     width: 34%;
     height: 80px;
   }
+  .image-container {
+  position: relative;
+  text-align: center; /* Important for centering */
+  width: 100%; /* Crucial for taking up full width */
+  height: auto;
+  overflow: hidden; /* Hide any overflow; important! */
+}
+
+.centered-image {
+  display: block; /* Important for correct width calculation */
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center horizontally */
+}
+
 </style>
   
 <script>
